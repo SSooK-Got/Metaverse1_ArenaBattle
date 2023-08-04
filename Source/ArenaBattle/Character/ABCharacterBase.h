@@ -60,6 +60,11 @@ protected:
 
 	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
+	
+
 public:
 	virtual void AttackHitCheck() override;
+
+	UPROPERTY(EditAnywhere, Category = Spawn)
+		class AABCharacterBase* ActorToSpawn;
 };

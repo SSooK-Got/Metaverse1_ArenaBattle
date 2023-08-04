@@ -37,3 +37,13 @@ void UABAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		bIsJumping = bIsFalling & (Velocity.Z > JumpThreshould);
 	}
 }
+
+void UABAnimInstance::OnMontageEnded(UAnimMontage* Montage, bool bInterrupted)
+{
+
+}
+
+void UABAnimInstance::AnimNotify_ActorDead()
+{
+	GetOwningActor()->Destroy();
+}

@@ -210,6 +210,9 @@ void AABCharacterBase::AttackHitCheck()
 	{
 		FDamageEvent DamageEvent;
 		OutHitResult.GetActor()->TakeDamage(100.0f, DamageEvent, GetController(), this);
+
+		FActorSpawnParameters ActorSpawnParameters;
+		AABCharacterBase* Character = GetWorld()->SpawnActor<AABCharacterBase>(ActorToSpawn->StaticClass(), this->GetActorLocation(), this->GetActorRotation());
 	}
 
 #if ENABLE_DRAW_DEBUG

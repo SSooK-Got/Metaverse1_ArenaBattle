@@ -21,6 +21,8 @@ protected:
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
+	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character)
 	TObjectPtr<class ACharacter> Owner;
 
@@ -48,4 +50,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Character)
 		float JumpThreshould;
 	
+public:
+	void OnMontageEnded(UAnimMontage* Montage, bool bInterrupted);
+
+	void AnimNotify_ActorDead();
 };
